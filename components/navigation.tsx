@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import { useState } from 'react'; // useStateをインポート
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
@@ -89,6 +90,10 @@ const mainNav = [
 export function Navigation() {
   const pathname = usePathname();
   const [activeItem, setActiveItem] = React.useState<string | null>(null);
+  const [isSheetOpen, setSheetOpen] = useState(false); // モバイルメニューの開閉状態を管理
+
+  // メニューを閉じる関数
+  const closeSheet = () => setSheetOpen(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/60 backdrop-blur-lg backdrop-saturate-150 supports-[backdrop-filter]:bg-background/60">
@@ -197,17 +202,17 @@ export function Navigation() {
           </Button>
 
           {/* Mobile Navigation */}
-          <Sheet>
-            <SheetTrigger asChild className="md:hidden">
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                className="hover:bg-primary/10"
-                aria-label="メニューを開く"
-              >
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
+          <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
+          <SheetTrigger asChild className="md:hidden">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="hover:bg-primary/10"
+              aria-label="メニューを開く"
+            >
+              <Menu className="h-5 w-5" />
+            </Button>
+          </SheetTrigger>
             <SheetContent side="right" className="w-full sm:w-96 px-0">
               <SheetHeader className="px-6 border-b pb-6">
                 <SheetTitle className="flex items-center gap-2">
@@ -231,6 +236,7 @@ export function Navigation() {
                             'flex items-center gap-3 p-2 rounded-lg hover:bg-primary/10 transition-colors',
                             pathname === item.href ? 'bg-primary/10' : ''
                           )}
+                          onClick={closeSheet} // クリック時にメニューを閉じる
                         >
                           <item.icon className="h-5 w-5 text-primary" />
                           <span className="flex-1">{item.title}</span>
@@ -254,6 +260,7 @@ export function Navigation() {
                             'flex items-center gap-3 p-2 rounded-lg hover:bg-primary/10 transition-colors',
                             pathname === item.href ? 'bg-primary/10' : ''
                           )}
+                          onClick={closeSheet} // クリック時にメニューを閉じる
                         >
                           <item.icon className="h-5 w-5 text-primary" />
                           <span className="flex-1">{item.title}</span>
@@ -277,6 +284,7 @@ export function Navigation() {
                             'flex items-center gap-3 p-2 rounded-lg hover:bg-primary/10 transition-colors',
                             pathname === item.href ? 'bg-primary/10' : ''
                           )}
+                          onClick={closeSheet} // クリック時にメニューを閉じる
                         >
                           <item.icon className="h-5 w-5 text-primary" />
                           <span className="flex-1">{item.title}</span>
@@ -288,8 +296,8 @@ export function Navigation() {
                 </div>
               </div>
             </SheetContent>
-          </Sheet>
-        </div>
+           </Sheet>
+         </div>
       </div>
     </header>
   );
