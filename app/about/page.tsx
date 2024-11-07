@@ -1,7 +1,11 @@
+'use client';
+
 import Image from 'next/image';
+import { motion, useAnimation } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Users, Target, Heart, Quote } from 'lucide-react';
+import { useEffect } from 'react';
 
 const values = [
   {
@@ -75,6 +79,15 @@ const team = [
 ];
 
 export default function About() {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start({
+      scale: 2.0, // 最終的なサイズ
+      transition: { duration: 10, ease: 'easeInOut' }, // 拡大アニメーション
+    });
+  }, [controls]);
+
   return (
     <div className="min-h-screen">
       {/* Mission Section */}
@@ -97,14 +110,17 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-12">
-              <div className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
+              <motion.div
+                animate={controls} // useAnimationフックで制御
+                className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0 overflow-hidden rounded-full"
+              >
                 <Image
                   src="/images/team/fukuda.jpeg"
                   alt="福田 代表取締役"
                   fill
                   className="object-cover rounded-full"
                 />
-              </div>
+              </motion.div>
               <div>
                 <div className="mb-6">
                   <Quote className="h-8 w-8 text-primary mb-4" />
