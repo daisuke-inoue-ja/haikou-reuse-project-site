@@ -1,0 +1,60 @@
+import { NewsItem } from '@/types/news';
+
+export const newsItems: NewsItem[] = [
+  {
+    id: 1,
+    title: '廃校活用支援プロジェクト始動',
+    content: '地域の廃校を新たな価値創造の場として活用するための支援プロジェクトが始動しました。文部科学省の支援を受け、専門家チームによる相談窓口の設置や、活用事例の調査研究を行っていきます。',
+    date: '2024-04-01',
+    category: 'お知らせ',
+    image: 'https://images.unsplash.com/photo-1577791465485-b80039b4d69a?auto=format&fit=crop&q=80',
+  },
+  {
+    id: 2,
+    title: '第1回廃校活用相談会を開催',
+    content: '地域の皆様から廃校活用のアイデアや課題についてご相談をお受けする相談会を開催します。建築専門家や地域活性化コンサルタントが個別にアドバイスを提供いたします。参加費は無料です。',
+    date: '2024-03-25',
+    category: 'イベント',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80',
+  },
+  {
+    id: 3,
+    title: '廃校活用アイデアコンテスト参加者募集',
+    content: '地域の廃校を活用した革新的なプロジェクトのアイデアを募集します。優秀なプランには実現に向けた支援金（最大300万円）を提供。学生からプロフェッショナルまで、幅広い方々のご参加をお待ちしています。',
+    date: '2024-03-20',
+    category: '募集',
+    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80',
+  },
+  {
+    id: 4,
+    title: '全国廃校活用事例集を公開',
+    content: '全国の特徴的な廃校活用事例をまとめたデータベースを公開しました。施設の改修方法や運営モデル、活用までのプロセスなど、実践的な情報を掲載しています。どなたでも無料で閲覧いただけます。',
+    date: '2024-03-15',
+    category: 'お知らせ',
+    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80',
+  },
+  {
+    id: 5,
+    title: '廃校活用支援専門家ネットワーク始動',
+    content: '建築家、まちづくりコンサルタント、法務専門家など、廃校活用に関わる各分野の専門家によるサポートネットワークを構築しました。地域の皆様の多様なニーズにお応えできる体制を整えています。',
+    date: '2024-03-10',
+    category: 'お知らせ',
+    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80',
+  },
+  {
+    id: 6,
+    title: '廃校活用に関する助成金情報を集約',
+    content: '国や地方自治体、民間団体が提供する廃校活用関連の助成金情報を一元化したポータルサイトを開設。申請手続きのサポートも行っています。',
+    date: '2024-03-05',
+    category: 'お知らせ',
+    image: 'https://images.unsplash.com/photo-1554224155-6d2f99f7b45b?auto=format&fit=crop&q=80',
+  },
+  {
+    id: 7,
+    title: '廃校活用オンライン相談窓口開設',
+    content: 'より多くの地域の方々にご相談いただけるよう、オンライン相談窓口を開設しました。Zoomを利用して、専門家に気軽にご相談いただけます。',
+    date: '2024-03-01',
+    category: 'お知らせ',
+    image: 'https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&q=80',
+  },
+];
