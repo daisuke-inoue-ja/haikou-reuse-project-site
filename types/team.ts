@@ -1,6 +1,9 @@
 export interface TeamMember {
   id: string;
-  name: string;
+  firstName: string;
+  lastName: string;
+  firstNameRomanized: string;
+  lastNameRomanized: string;
   role: string;
   image: string;
   title: string;
