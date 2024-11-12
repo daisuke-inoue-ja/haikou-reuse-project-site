@@ -79,7 +79,7 @@ export function Navigation() {
   const pathname = usePathname();
   const [isSheetOpen, setSheetOpen] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState(false);
-  const [expandedSections, setExpandedSections] = React.useState({});
+  const [expandedSections, setExpandedSections] = React.useState<Record<string, boolean>>({});
 
   React.useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 1024);
@@ -90,7 +90,7 @@ export function Navigation() {
 
   const closeSheet = () => setSheetOpen(false);
 
-  const toggleSection = (sectionId) => {
+  const toggleSection = (sectionId: string) => {
     setExpandedSections((prev) => ({
       ...prev,
       [sectionId]: !prev[sectionId],
@@ -165,7 +165,7 @@ export function Navigation() {
                       className="flex items-center justify-between w-full text-left font-medium text-muted-foreground hover:text-foreground"
                     >
                       <div className="flex items-center gap-2">
-                        <Icon className="h-5 w-5 text-primary" />
+                        {Icon && <Icon className="h-5 w-5 text-primary" />}
                         <span>{title}</span>
                       </div>
                       {expandedSections[id] ? (
@@ -186,7 +186,7 @@ export function Navigation() {
                             )}
                             onClick={closeSheet}
                           >
-                            <item.icon className="h-5 w-5 text-primary" />
+                            {item.icon && <item.icon className="h-5 w-5 text-primary" />}
                             <span className="flex-1">{item.title}</span>
                           </Link>
                         ))}
@@ -208,7 +208,7 @@ export function Navigation() {
 const ListItem = React.forwardRef<HTMLAnchorElement, { 
   title: string; 
   href: string; 
-  icon: React.ComponentType<any>; 
+  icon?: React.ComponentType<any>; 
   children?: React.ReactNode; 
 }>(({ title, href, icon: Icon, children }, ref) => (
   <li>
@@ -218,7 +218,7 @@ const ListItem = React.forwardRef<HTMLAnchorElement, {
         className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 focus:bg-primary/10"
       >
         <div className="flex items-center gap-2">
-          <Icon className="h-5 w-5 text-primary" />
+          {Icon && <Icon className="h-5 w-5 text-primary" />}
           <span className="text-sm font-medium">{title}</span>
         </div>
         {children && (
