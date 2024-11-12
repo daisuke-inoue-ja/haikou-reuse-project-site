@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, useAnimation } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -26,72 +27,20 @@ const values = [
   },
 ];
 
-const team = [
-  {
-    name: '福田',
-    role: '代表取締役',
-    image: '/images/team/fukuda.jpeg',
-    bio: '教育施設の再生と地域活性化のエキスパート。革新的なアプローチで廃校を地域の新たな価値創造の拠点へと転換する。',
-    status: 'core',
-  },
-  {
-    name: '中村',
-    role: 'プロジェクトマネージャー',
-    image: '/images/team/nakamura.jpeg',
-    bio: 'プロジェクトマネジメントのスペシャリスト。複雑な利害関係者との調整と、効率的なプロジェクト推進を得意とする。',
-    status: 'core',
-  },
-  {
-    name: 'さいもん',
-    role: 'クリエイティブディレクター',
-    image: '/images/team/saimon.jpeg',
-    bio: '空間デザインと企画立案のプロフェッショナル。独創的な視点で施設の可能性を最大限に引き出す。',
-    status: 'core',
-  },
-  {
-    name: '柳',
-    role: 'エンジニア',
-    image: '/images/team/yanagi.jpeg',
-    bio: '最新技術を駆使したシステム開発のスペシャリスト。',
-    status: 'member',
-  },
-  {
-    name: '宮下',
-    role: 'デザイナー',
-    image: '/images/team/miyashita.jpeg',
-    bio: 'ユーザー体験を重視した革新的なデザインを創造。',
-    status: 'member',
-  },
-  {
-    name: '小澤',
-    role: 'コミュニティマネージャー',
-    image: '/images/team/ozawa.jpeg',
-    bio: '地域コミュニティとの強固な関係構築を推進。',
-    status: 'member',
-  },
-  {
-    name: '井上',
-    role: 'マーケティング',
-    image: '/images/team/inoue.jpeg',
-    bio: 'データドリブンなマーケティング戦略を展開',
-    status: 'member',
-  },
-];
-
 export default function About() {
   const controls = useAnimation();
 
   useEffect(() => {
     controls.start({
-      scale: 2.0, // 最終的なサイズ
-      transition: { duration: 10, ease: 'easeInOut' }, // 拡大アニメーション
+      scale: 2.0,
+      transition: { duration: 10, ease: 'easeInOut' },
     });
   }, [controls]);
 
   return (
     <div className="min-h-screen">
       {/* Mission Section */}
-      <section className="relative py-24 bg-muted/50">
+      <section id="mission" className="relative py-24 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-6">私たちのミッション</h1>
@@ -106,12 +55,12 @@ export default function About() {
       </section>
 
       {/* CEO Message Section */}
-      <section className="py-24 bg-white">
+      <section id="ceo-message" className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <motion.div
-                animate={controls} // useAnimationフックで制御
+                animate={controls}
                 className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0 overflow-hidden rounded-full"
               >
                 <Image
@@ -147,63 +96,41 @@ export default function About() {
         </div>
       </section>
 
-    {/* Core Values Section */}
-    <section className="relative py-32 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4">私たちのビジョン</h2>
-        <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">革新と献身を通じて明日を形作る</p>
-        <div className="grid md:grid-cols-3 gap-12">
-          {values.map((value) => (
-            <Card key={value.title} className="group hover:scale-105 transition-transform duration-300 bg-white/70 backdrop-blur border-none shadow-xl">
-              <CardContent className="p-8">
-                <div className="bg-primary/10 rounded-full p-4 w-fit mb-6 group-hover:bg-primary/20 transition-colors">
-                  <value.icon className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-      <div className="absolute inset-0 bg-grid-black/[0.02] -z-10" />
-    </section>
-
-      {/* Team Section */}
-      <section className="py-24 bg-muted/50">
+      {/* Core Values Section */}
+      <section id="core-values" className="relative py-32 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16">
-            チームメンバー
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.map((member) => (
+          <h2 className="text-4xl font-bold text-center mb-4">私たちのビジョン</h2>
+          <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+            革新と献身を通じて明日を形作る
+          </p>
+          <div className="grid md:grid-cols-3 gap-12">
+            {values.map((value) => (
               <Card
-                key={member.name}
-                className="overflow-hidden border-none shadow-lg"
+                key={value.title}
+                className="group hover:scale-105 transition-transform duration-300 bg-white/70 backdrop-blur border-none shadow-xl"
               >
-                <div className="relative h-64 w-full">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                  <p className="text-primary mb-4">{member.role}</p>
-                  <p className="text-muted-foreground">{member.bio}</p>
+                <CardContent className="p-8">
+                  <div className="bg-primary/10 rounded-full p-4 w-fit mb-6 group-hover:bg-primary/20 transition-colors">
+                    <value.icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {value.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
+        <div className="absolute inset-0 bg-grid-black/[0.02] -z-10" />
       </section>
-      
+
       {/* Company Info Section */}
-      <section className="py-24">
+      <section id="company-info" className="py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-16">プロジェクト概要</h2>
+          <h2 className="text-3xl font-bold text-center mb-16">
+            プロジェクト情報
+          </h2>
           <div className="max-w-2xl mx-auto">
             <dl className="divide-y">
               <div className="py-4 flex">
@@ -212,15 +139,17 @@ export default function About() {
               </div>
               <div className="py-4 flex">
                 <dt className="w-1/3 font-medium">開始時期</dt>
-                <dd className="w-2/3">2024年4月1日</dd>
+                <dd className="w-2/3">2024年11月1日</dd>
               </div>
               <div className="py-4 flex">
                 <dt className="w-1/3 font-medium">実施期間</dt>
-                <dd className="w-2/3">2024年4月〜</dd>
+                <dd className="w-2/3">2024年11月〜</dd>
               </div>
               <div className="py-4 flex">
                 <dt className="w-1/3 font-medium">実施場所</dt>
-                <dd className="w-2/3">〒100-0001 東京都千代田区千代田1-1-1 旧千代田小学校</dd>
+                <dd className="w-2/3">
+                  〒100-0001 東京都千代田区千代田1-1-1 旧千代田小学校
+                </dd>
               </div>
               <div className="py-4 flex">
                 <dt className="w-1/3 font-medium">プロジェクト内容</dt>

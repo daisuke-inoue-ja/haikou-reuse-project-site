@@ -19,6 +19,7 @@ export function Footer() {
             <h3 className="font-semibold mb-4">サイトマップ</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/about">プロジェクト概要</Link></li>
+              <li><Link href="/team">チームメンバー</Link></li>
               <li><Link href="/services">サービス</Link></li>
               <li><Link href="/blog">ブログ</Link></li>
               <li><Link href="/news">ニュース</Link></li>
