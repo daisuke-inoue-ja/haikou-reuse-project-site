@@ -43,11 +43,11 @@ const menuSections = [
     title: 'プロジェクト概要',
     icon: Sparkles,
     items: [
-      { id: 'mission', title: 'プロジェクト概要', href: '/about#mission', description: '私たちのミッションとビジョン' },
-      { id: 'philosophy', title: '活動理念', href: '/about#philosophy', description: '価値観と未来' },
+      { id: 'mission', title: 'プロジェクト概要', href: '/about#mission', description: '私たちのミッションとビジョン', icon: Sparkles },
+      { id: 'philosophy', title: '活動理念', href: '/about#philosophy', description: '価値観と未来', icon: Palette },
       { id: 'ceo-message', title: 'CEOメッセージ', href: '/about#ceo-message', description: '代表からのメッセージ' },
       { id: 'core-values', title: 'ビジョン', href: '/about#core-values', description: 'コアバリューと持続可能性' },
-      { id: 'company-info', title: 'プロジェクト情報', href: '/about#company-info', description: 'プロジェクトの基本情報' },
+      { id: 'company-info', title: 'プロジェクト情報', href: '/about#company-info', description: 'プロジェクトの基本情報', icon: Calendar },
     ],
   },
   {
@@ -56,9 +56,9 @@ const menuSections = [
     icon: Building2,
     items: [
       { id: 'service-hero', title: 'サービス内容', href: '/services#hero', description: '地域の価値創造拠点' },
-      { id: 'renovation', title: '施設リノベーション', href: '/services#services', description: '地域のニーズに合わせた施設の再生' },
-      { id: 'features', title: '特徴', href: '/services#features', description: 'プロジェクトの主な特徴' },
-      { id: 'cta', title: 'お問い合わせ', href: '/services#cta', description: 'プロジェクトのご相談はこちら' },
+      { id: 'renovation', title: '施設リノベーション', href: '/services#services', description: '施設の再生と活用', icon: Building2 },
+      { id: 'features', title: '特徴', href: '/services#features', description: 'プロジェクトの特徴', icon: BookOpen },
+      { id: 'cta', title: 'お問い合わせ', href: '/services#cta', description: 'ご相談はこちら', icon: Phone },
     ],
   },
   {
@@ -66,11 +66,11 @@ const menuSections = [
     title: 'その他',
     icon: Users2,
     items: [
-      { id: 'team', title: 'チームメンバー', href: '/team' },
-      { id: 'blog', title: 'ブログ', href: '/blog' },
-      { id: 'news', title: 'ニュース', href: '/news' },
-      { id: 'faq', title: 'FAQ', href: '/faq' },
-      { id: 'contact', title: 'お問い合わせ', href: '/contact', isButton: true },
+      { id: 'team', title: 'チームメンバー', href: '/team', icon: Users2 },
+      { id: 'blog', title: 'ブログ', href: '/blog', icon: BookOpen },
+      { id: 'news', title: 'ニュース', href: '/news', icon: MessageCircle },
+      { id: 'faq', title: 'FAQ', href: '/faq', icon: HelpCircle },
+      { id: 'contact', title: 'お問い合わせ', href: '/contact', icon: Phone, isButton: true },
     ],
   },
 ];
@@ -209,11 +209,7 @@ const ListItem = React.forwardRef<HTMLAnchorElement, {
           {Icon && <Icon className="h-5 w-5 text-primary" />}
           <span className="text-sm font-medium">{title}</span>
         </div>
-        {children && (
-          <p className="line-clamp-2 text-sm text-muted-foreground mt-2">
-            {children}
-          </p>
-        )}
+        {children && <p className="line-clamp-2 text-sm text-muted-foreground mt-2">{children}</p>}
       </a>
     </NavigationMenuLink>
   </li>
