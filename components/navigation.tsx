@@ -37,7 +37,16 @@ import {
   ChevronUp,
 } from 'lucide-react';
 
-const menuSections = [
+type MenuItem = {
+  id: string;
+  title: string;
+  href: string;
+  description?: string; // descriptionをオプショナルにする
+  icon?: React.ComponentType<any>;
+  isButton?: boolean;
+};
+
+const menuSections: { id: string; title: string; icon: React.ComponentType<any>; items: MenuItem[] }[] = [
   {
     id: 'about',
     title: 'プロジェクト概要',
@@ -58,7 +67,7 @@ const menuSections = [
       { id: 'service-hero', title: 'サービス内容', href: '/services#hero', description: '地域の価値創造拠点' },
       { id: 'renovation', title: '施設リノベーション', href: '/services#services', description: '施設の再生と活用', icon: Building2 },
       { id: 'features', title: '特徴', href: '/services#features', description: 'プロジェクトの特徴', icon: BookOpen },
-      { id: 'cta', title: 'お問い合わせ', href: '/services#cta', description: 'ご相談はこちら', icon: Phone },
+      { id: 'cta', title: 'ご相談', href: '/services#cta', description: 'ご相談はこちら', icon: Phone },
     ],
   },
   {
@@ -193,6 +202,7 @@ export function Navigation() {
   );
 }
 
+// ListItem Component
 const ListItem = React.forwardRef<HTMLAnchorElement, { 
   title: string; 
   href: string; 
