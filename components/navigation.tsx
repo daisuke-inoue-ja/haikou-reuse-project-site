@@ -205,8 +205,12 @@ export function Navigation() {
   );
 }
 
-// ListItem Component
-const ListItem = React.forwardRef(({ title, href, icon: Icon, children }, ref) => (
+const ListItem = React.forwardRef<HTMLAnchorElement, { 
+  title: string; 
+  href: string; 
+  icon: React.ComponentType<any>; 
+  children?: React.ReactNode; 
+}>(({ title, href, icon: Icon, children }, ref) => (
   <li>
     <NavigationMenuLink asChild href={href}>
       <a
