@@ -1,3 +1,40 @@
+'use client';
+
+import * as React from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu';
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
+import {
+  School,
+  Menu,
+  Phone,
+  ChevronRight,
+  Building2,
+  Users2,
+  BookOpen,
+  MessageCircle,
+  HelpCircle,
+  Sparkles,
+  Palette,
+  Calendar,
+} from 'lucide-react';
+
 const menuSections: Record<'about' | 'services' | 'mainNav', { title: string; href: string; description?: string; icon: React.ComponentType; isButton?: boolean }[]> = {
   about: [
     { title: 'プロジェクト概要', href: '/about#mission', description: '私たちのミッションとビジョン', icon: Sparkles },
@@ -134,3 +171,24 @@ export function Navigation() {
     </header>
   );
 }
+
+// ListItem Component
+const ListItem = React.forwardRef(({ title, href, icon: Icon, children }, ref) => (
+  <li>
+    <NavigationMenuLink asChild href={href}>
+      <a
+        ref={ref}
+        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary/10 hover:text-accent-foreground focus:bg-primary/10 focus:text-accent-foreground"
+      >
+        <div className="flex items-center gap-2">
+          <Icon className="h-5 w-5 text-primary" />
+          <span className="text-sm font-medium leading-none">{title}</span>
+        </div>
+        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-2">
+          {children}
+        </p>
+      </a>
+    </NavigationMenuLink>
+  </li>
+));
+ListItem.displayName = 'ListItem';
