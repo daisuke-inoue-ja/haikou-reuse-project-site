@@ -140,7 +140,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
               お問い合わせ
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              {member.lastName} へのお問い合わせやプロジェクトに関するご相談は、以下のボタンからお気軽にご連絡ください。
+              メンバーに関するお問い合わせやプロジェクトに関するご相談は、以下のボタンからお気軽にご連絡ください。
             </p>
             <Link
               href="/contact"

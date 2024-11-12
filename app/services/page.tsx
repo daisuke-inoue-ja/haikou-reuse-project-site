@@ -46,20 +46,19 @@ export default function Services() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-24 bg-muted/50">
+      <section id="hero" className="relative py-24 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold mb-6">サービス内容</h1>
             <p className="text-lg text-muted-foreground">
-              私たちは、廃校を地域の新たな価値創造の拠点として再生するために、
-              包括的なサービスを提供しています。
+              私たちは、廃校を地域の新たな価値創造の拠点として再生するために、包括的なサービスを提供しています。
             </p>
           </div>
         </div>
       </section>
 
       {/* Main Services Section */}
-      <section className="py-24">
+      <section id="services" className="py-24">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-12">
             {services.map((service) => (
@@ -86,7 +85,7 @@ export default function Services() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-muted/50">
+      <section id="features" className="py-24 bg-muted/50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-16">特徴</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -104,7 +103,7 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24">
+      <section id="cta" className="py-24">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-8">プロジェクトのご相談</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
