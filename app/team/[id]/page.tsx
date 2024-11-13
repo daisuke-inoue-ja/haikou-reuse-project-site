@@ -42,21 +42,26 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
+      {/* Sticky Back Button Section */}
+      <div className="sticky top-16 z-20 bg-background px-4 py-2 border-b border-muted-foreground">
+        <Link
+          href="/team"
+          className="flex items-center text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <ArrowLeft className="h-4 w-4 mr-2" />
+          チーム一覧に戻る
+        </Link>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative h-[60vh] bg-gradient-to-b from-primary/10 to-background overflow-hidden">
+      <section className="relative flex items-center justify-center bg-gradient-to-b from-primary/10 to-background overflow-hidden py-10 md:py-20">
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px_32px]" />
-        <div className="container h-full px-4 flex items-center relative z-10">
-          <Link
-            href="/team"
-            className="absolute top-4 left-4 flex items-center text-muted-foreground hover:text-foreground transition-colors md:top-8"
-          >
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            チーム一覧に戻る
-          </Link>
-          
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-              <div className="relative w-48 h-48 md:w-80 md:h-80 mx-auto">
+        <div className="container max-w-[80%] px-4 relative z-10">
+          <TeamMemberAnimation>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              {/* Profile Image */}
+              <div className="relative w-60 h-60 md:w-80 md:h-80 mx-auto">
                 <Image
                   src={member.image}
                   alt={`${member.firstName} ${member.lastName}`}
@@ -66,26 +71,29 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
                 />
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/40 to-transparent" />
               </div>
-              
-              <div className="text-center md:text-left">
-                <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">
+
+              {/* Member Details */}
+              <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-4">
+                <Badge className="bg-primary/10 text-primary">
                   {member.role}
                 </Badge>
                 <p className="text-lg text-muted-foreground">
                   {member.lastNameRomanized} {member.firstNameRomanized}
                 </p>
-                <h1 className="text-3xl md:text-5xl font-bold mb-4">
+                <h1 className="text-3xl md:text-5xl font-bold">
                   {member.lastName} {member.firstName}
                 </h1>
-                <p className="text-xl text-primary mb-6">{member.title}</p>
+                <p className="text-xl text-primary">{member.title}</p>
                 <p className="text-muted-foreground">{member.shortBio}</p>
               </div>
             </div>
+          </TeamMemberAnimation>
         </div>
       </section>
 
       <div className="container px-4 py-16 md:py-24 space-y-16 md:space-y-24">
         {/* Background Section */}
+        <TeamMemberAnimation>
           <section>
             <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center">
               <Calendar className="h-6 md:h-8 w-6 md:w-8 mr-3 text-primary" />
@@ -108,8 +116,10 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
               </CardContent>
             </Card>
           </section>
+        </TeamMemberAnimation>
 
         {/* Message Section */}
+        <TeamMemberAnimation>
           <section>
             <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center">
               <Award className="h-6 md:h-8 w-6 md:w-8 mr-3 text-primary" />
@@ -125,8 +135,10 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
               </CardContent>
             </Card>
           </section>
+        </TeamMemberAnimation>
 
         {/* Contact Section */}
+        <TeamMemberAnimation>
           <section className="text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center justify-center">
               <Mail className="h-6 md:h-8 w-6 md:w-8 mr-3 text-primary" />
@@ -142,6 +154,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
               お問い合わせフォームへ
             </Link>
           </section>
+        </TeamMemberAnimation>
       </div>
     </div>
   );

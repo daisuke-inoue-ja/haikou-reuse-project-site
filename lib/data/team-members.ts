@@ -64,7 +64,7 @@ export const teamMembers: TeamMember[] = [
     role: 'none data',
     image: '/images/team/yanagi.jpeg',
     title: 'none data',
-    shortBio: 'サンプルテキスト。。。。。。。。ああああああああああ。。。。。。。',
+    shortBio: 'none data',
     background: [
       {
         year: '2014年5月',
@@ -91,7 +91,7 @@ export const teamMembers: TeamMember[] = [
     role: 'none data',
     image: '/images/team/miyashita.jpeg',
     title: 'none data',
-    shortBio: 'サンプルテキスト。。。。。。。。ああああああああああ。。。。。。。',
+    shortBio: 'none data',
     background: [
       {
         year: 'none data',
@@ -109,7 +109,7 @@ export const teamMembers: TeamMember[] = [
     role: 'none data',
     image: '/images/team/ozawa.jpeg',
     title: 'none data',
-    shortBio: 'サンプルテキスト。。。。。。。。ああああああああああ。。。。。。。',
+    shortBio: 'none data',
     background: [
       {
         year: 'none data',
@@ -127,7 +127,7 @@ export const teamMembers: TeamMember[] = [
     role: 'none data',
     image: '/images/team/inoue.jpeg',
     title: 'none data',
-    shortBio: 'サンプルテキスト。。。。。。。。ああああああああああ。。。。。。。',
+    shortBio: 'none data',
     background: [
       {
         year: '2010年4月',
