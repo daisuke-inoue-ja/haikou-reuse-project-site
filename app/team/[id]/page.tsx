@@ -97,7 +97,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
           <section>
             <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center">
               <Calendar className="h-6 md:h-8 w-6 md:w-8 mr-3 text-primary" />
-              経歴
+              略歴
             </h2>
             <Card className="overflow-hidden backdrop-blur-sm bg-white/60">
               <CardContent className="p-6 md:p-8">
