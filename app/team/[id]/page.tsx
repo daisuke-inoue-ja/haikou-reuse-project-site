@@ -55,7 +55,6 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
             チーム一覧に戻る
           </Link>
           
-          <TeamMemberAnimation>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div className="relative w-48 h-48 md:w-80 md:h-80 mx-auto">
                 <Image
@@ -82,13 +81,11 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
                 <p className="text-muted-foreground">{member.shortBio}</p>
               </div>
             </div>
-          </TeamMemberAnimation>
         </div>
       </section>
 
       <div className="container px-4 py-16 md:py-24 space-y-16 md:space-y-24">
         {/* Background Section */}
-        <TeamMemberAnimation>
           <section>
             <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center">
               <Calendar className="h-6 md:h-8 w-6 md:w-8 mr-3 text-primary" />
@@ -111,10 +108,8 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
               </CardContent>
             </Card>
           </section>
-        </TeamMemberAnimation>
 
         {/* Message Section */}
-        <TeamMemberAnimation>
           <section>
             <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center">
               <Award className="h-6 md:h-8 w-6 md:w-8 mr-3 text-primary" />
@@ -130,10 +125,8 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
               </CardContent>
             </Card>
           </section>
-        </TeamMemberAnimation>
 
         {/* Contact Section */}
-        <TeamMemberAnimation>
           <section className="text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 flex items-center justify-center">
               <Mail className="h-6 md:h-8 w-6 md:w-8 mr-3 text-primary" />
@@ -149,7 +142,6 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
               お問い合わせフォームへ
             </Link>
           </section>
-        </TeamMemberAnimation>
       </div>
     </div>
   );
