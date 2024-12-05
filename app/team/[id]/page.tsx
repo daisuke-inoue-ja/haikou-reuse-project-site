@@ -61,12 +61,12 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
           <TeamMemberAnimation>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               {/* Profile Image */}
-              <div className="relative w-60 h-60 md:w-80 md:h-80 mx-auto">
+              <div className="relative w-60 h-72 md:w-80 md:h-96 mx-auto">
                 <Image
                   src={member.image}
                   alt={`${member.firstName} ${member.lastName}`}
                   fill
-                  className="object-cover rounded-2xl shadow-2xl"
+                  className="object-cover object-top rounded-2xl shadow-2xl"
                   priority
                 />
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/40 to-transparent" />

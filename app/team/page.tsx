@@ -70,12 +70,12 @@ export default function TeamPage() {
             {teamMembers.map((member) => (
               <Link href={`/team/${member.id}`} key={member.id}>
                 <Card className="group relative overflow-hidden border-none shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="relative h-80">
+                  <div className="relative h-96">
                     <Image
                       src={member.image}
                       alt={`${member.firstName} ${member.lastName}`}
                       fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-100 group-hover:opacity-90 transition-opacity duration-300" />
                   </div>
