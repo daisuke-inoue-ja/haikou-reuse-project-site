@@ -32,7 +32,7 @@ export default function About() {
 
   useEffect(() => {
     controls.start({
-      scale: 2.0,
+      scale: 1.2,
       transition: { duration: 10, ease: 'easeInOut' },
     });
   }, [controls]);
@@ -64,10 +64,10 @@ export default function About() {
                 className="relative w-48 h-48 md:w-64 md:h-64 flex-shrink-0 overflow-hidden rounded-full"
               >
                 <Image
-                  src="/images/team/fukuda.jpeg"
+                  src="/images/team/fukuda.jpg"
                   alt="福田 代表取締役"
                   fill
-                  className="object-cover rounded-full"
+                  className="object-cover object-top rounded-full"
                 />
               </motion.div>
               <div>
