@@ -8,7 +8,7 @@ export const teamMembers: TeamMember[] = [
     firstNameRomanized: "Shodai",
     lastNameRomanized: "Hukuda",
     role: '代表取締役',
-    image: '/images/team/fukuda.jpeg',
+    image: '/images/team/fukuda.jpg',
     title: '代表取締役・プロジェクト統括',
     shortBio: '教育施設の再生と地域活性化のエキスパート。革新的なアプローチで廃校を地域の新たな価値創造の拠点へと転換する。',
     background: [
@@ -26,7 +26,7 @@ export const teamMembers: TeamMember[] = [
     firstNameRomanized: "Ryota",
     lastNameRomanized: "Nakamura",
     role: 'プロジェクトマネージャー',
-    image: '/images/team/nakamura.jpeg',
+    image: '/images/team/nakamura.jpg',
     title: 'プロジェクトマネージャー・地域連携担当',
     shortBio: 'プロジェクトマネジメントのスペシャリスト。複雑な利害関係者との調整と、効率的なプロジェクト推進を得意とする。',
     background: [
@@ -44,7 +44,7 @@ export const teamMembers: TeamMember[] = [
     firstNameRomanized: "Takanori",
     lastNameRomanized: "Saimon",
     role: 'クリエイティブディレクター',
-    image: '/images/team/saimon.jpeg',
+    image: '/images/team/saimon.jpg',
     title: 'クリエイティブディレクター・空間デザイン担当',
     shortBio: '空間デザインと企画立案のプロフェッショナル。独創的な視点で施設の可能性を最大限に引き出す。',
     background: [
@@ -62,7 +62,7 @@ export const teamMembers: TeamMember[] = [
     firstNameRomanized: "Kazumasa",
     lastNameRomanized: "Yanagi",
     role: 'none data',
-    image: '/images/team/yanagi.jpeg',
+    image: '/images/team/yanagi.jpg',
     title: 'none data',
     shortBio: 'none data',
     background: [
@@ -89,7 +89,7 @@ export const teamMembers: TeamMember[] = [
     firstNameRomanized: "Hiromu",
     lastNameRomanized: "Miyashita",
     role: 'none data',
-    image: '/images/team/miyashita.jpeg',
+    image: '/images/team/miyashita.jpg',
     title: 'none data',
     shortBio: 'none data',
     background: [
@@ -107,7 +107,7 @@ export const teamMembers: TeamMember[] = [
     firstNameRomanized: "Nanami",
     lastNameRomanized: "Ozawa",
     role: 'none data',
-    image: '/images/team/ozawa.jpeg',
+    image: '/images/team/ozawa.jpg',
     title: 'none data',
     shortBio: 'none data',
     background: [
@@ -125,7 +125,7 @@ export const teamMembers: TeamMember[] = [
     firstNameRomanized: "Daisuke",
     lastNameRomanized: "Inoue",
     role: 'none data',
-    image: '/images/team/inoue.jpeg',
+    image: '/images/team/inoue.jpg',
     title: 'none data',
     shortBio: 'none data',
     background: [
@@ -160,7 +160,7 @@ export const teamMembers: TeamMember[] = [
     firstNameRomanized: "Shodai",
     lastNameRomanized: "Hukuda",
     role: '代表取締役',
-    image: '/images/team/fukuda.jpeg',
+    image: '/images/team/fukuda.jpg',
     title: '代表取締役・プロジェクト統括',
     shortBio: '教育施設の再生と地域活性化のエキスパート。革新的なアプローチで廃校を地域の新たな価値創造の拠点へと転換する。',
     background: [
